@@ -1,7 +1,11 @@
 const muscles = {
   neck: {
     sternocleidomastoid: 0,
-    splenius: 0,
+    splenius: {
+      cable: 0,
+      lever: 0,
+      weighted: 0,
+    },
   },
   shoulders: {
     deltoid: {
