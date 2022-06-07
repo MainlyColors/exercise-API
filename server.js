@@ -12,11 +12,10 @@ const muscles = require('./data.js');
 
 // middleware function for validating everything after muscles endpoint
 function endpointValidator(req, res, next) {
-  console.log(req.originalUrl);
-  console.log(req.path);
   // splice to remove first element ['']
   const paramsArr = req.path.split('/').splice(1);
-  console.log(paramsArr);
+  // at /muscles/ the path is /
+  if (req.path === '/') return next();
 
   if (!(paramsArr[0] in muscles))
     return res
