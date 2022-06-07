@@ -1,75 +1,77 @@
 const muscles = {
-  Neck: {
-    Sternocleidomastoid: 0,
-    Splenius: 0,
+  neck: {
+    sternocleidomastoid: 0,
+    splenius: 0,
   },
-  Shoulders: {
-    Deltoid: {
-      Anterior: 0,
-      Lateral: 0,
-      Posterior: 0,
+  shoulders: {
+    deltoid: {
+      anterior: 0,
+      lateral: 0,
+      posterior: 0,
     },
-    Supraspinatus: 0,
+    supraspinatus: 0,
   },
-  'Upper Arms': {
-    'Triceps Brachii': 0,
-    'Biceps Brachii': 0,
-    Brachialis: 0,
+  'upper arms': {
+    'triceps brachii': 0,
+    'biceps brachii': 0,
+    brachialis: 0,
   },
-  Forearms: {
-    Brachioradialis: 0,
-    Wrist: {
-      Flexors: 0,
-      Extensors: 0,
+  forearms: {
+    brachioradialis: 0,
+    wrist: {
+      flexors: 0,
+      extensors: 0,
     },
-    Pronators: 0,
-    Supinators: 0,
+    pronators: 0,
+    supinators: 0,
   },
   back: {
     general: 0,
-    'Latissimus Dorsi & Teres Major': 0,
+    'latissimus dorsi & teres major': 0,
     trapezius: {
       upper: 0,
       middle: 0,
       lower: 0,
     },
-    'Levator Scapulae': 0,
-    Rhomboids: 0,
-    'Infraspinatus & Teres Minor': 0,
-    Subscapularis: 0,
+    'levator scapulae': 0,
+    rhomboids: 0,
+    'infraspinatus & teres minor': 0,
+    subscapularis: 0,
   },
   chest: {
     general: 0,
-    'Pectoralis Major': {
-      Sternal: 0,
-      Clavicular: 0,
+    'pectoralis major': {
+      sternal: 0,
+      clavicular: 0,
     },
-    'Pectoralis Minor': 0,
-    'Serratus Anterior': 0,
+    'pectoralis minor': 0,
+    'serratus anterior': 0,
   },
   waist: {
-    'Rectus Abdominis': 0,
-    'Transverse Abdominis': 0,
-    Obliques: 0,
-    'Quadratus Lumborum': 0,
-    'Erector Spinae': 0,
+    'rectus abdominis': 0,
+    'transverse abdominis': 0,
+    obliques: 0,
+    'quadratus lumborum': 0,
+    'erector spinae': 0,
   },
   hips: {
-    'Gluteus Maximus': 0,
-    Abductors: 0,
-    Flexors: 0,
-    'Deep External Rotators': 0,
+    'gluteus maximus': 0,
+    abductors: 0,
+    flexors: 0,
+    'deep external rotators': 0,
   },
   thighs: {
-    Quadriceps: 0,
-    Hamstrings: 0,
-    'Hip Adductors': 0,
+    quadriceps: 0,
+    hamstrings: 0,
+    'hip adductors': 0,
   },
-  Calves: {
+  calves: {
     general: 0,
-    Gastrocnemius: 0,
-    Soleus: 0,
-    'Tibialis Anterior': 0,
-    Popliteus: 0,
+    gastrocnemius: 0,
+    soleus: 0,
+    'tibialis anterior': 0,
+    popliteus: 0,
   },
 };
+
+module.exports = muscles;
