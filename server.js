@@ -3,13 +3,38 @@ const app = express();
 const muscles = require('./data.js');
 
 // ************
-// data
+// utility functions
 // ************
 
 // ************
 // Middleware
 // ************
+function endpointValidator(req, res, next) {
+  console.log(req.originalUrl);
+  console.log(req.path);
+  // splice to remove first element ['']
+  const paramsArr = req.path.split('/').splice(1);
+  console.log(paramsArr);
 
+  if (!(paramsArr[0] in muscles))
+    return res
+      .status(404)
+      .send(
+        `Bad Request: No matching category, ${paramsArr[0]} not in database`
+      );
+
+  for (let i = 1; i < paramsArr.length; i++) {
+    if (!(paramsArr[i] in muscles[paramsArr[i - 1]]))
+      return res
+        .status(404)
+        .send(
+          `Bad Request: No matching category, ${paramsArr[i]} not in database`
+        );
+  }
+  next();
+}
+
+app.use('/muscles', endpointValidator);
 // ************
 // Routes
 // ************
@@ -26,7 +51,7 @@ app.get('/muscles', (req, res) => {
 // main outer level
 app.get('/muscles/:mainMuscleGroup', (req, res) => {
   const mainMuscleGroup = req.params.mainMuscleGroup.toLowerCase();
-  console.log(mainMuscleGroup);
+
   res.send(muscles[mainMuscleGroup]);
 });
 
