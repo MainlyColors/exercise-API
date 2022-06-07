@@ -9,6 +9,8 @@ const muscles = require('./data.js');
 // ************
 // Middleware
 // ************
+
+// middleware function for validating everything after muscles endpoint
 function endpointValidator(req, res, next) {
   console.log(req.originalUrl);
   console.log(req.path);
@@ -95,6 +97,6 @@ function unhandledRoute(req, res, next) {
 app.use(unhandledRoute);
 
 const PORT = 8000;
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT || PORT, (err) => {
   console.log(`Server listening to port ${PORT}`);
 });
